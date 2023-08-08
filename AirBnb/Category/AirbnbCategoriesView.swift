@@ -30,30 +30,35 @@ struct AirbnbCategoriesView: View {
 struct CategoryView:View{
     var category:DataModel
     var body: some View {
-        VStack(spacing: 8) {
-            //   KFImage(URL(string: category.image))
+        
+        VStack(alignment: .center, spacing: 3) {
+            // KFImage(URL(string: category.image))
             WebImage(url: URL(string: category.image))
                 .resizable()
                 .indicator(.activity)
-                .transition(.fade(duration: 0.03))
-                .scaledToFill()
-                .font(.system(size: 20))
+                .transition(.fade(duration: 0.5))
+                .scaledToFit()
+                .frame(width: 35, height: 35, alignment: .center)
+                .scaledToFit()
+                .clipShape(Circle())
+                .aspectRatio(contentMode: .fit)
                 .foregroundColor(.gray)
-                .frame(width: 64, height: 64)
+                .frame(width: 60, height: 60)
                 .background(Color.white)
                 .cornerRadius(64)
             Text(category.title)
                 .font(.system(size: 12,weight: .semibold))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
-        }
+        }.frame(width: 70)
+        
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
         
-        CategoryView(category:DataModel(id: "123", title: "title1", image: "image"))
+        CategoryView(category:DataModel(id: "123", title: "title1", image: "image")).padding(.top)
         
     }
 }

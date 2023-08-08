@@ -18,13 +18,13 @@ struct PopularPlaceView: View {
                 Text("Popular places")
                     .font(.system(size: 13, weight:.semibold))
                 Spacer()
-                Text("...")
             }.padding(.horizontal)
                 .foregroundColor(Color.pink)
                 .padding(.top)
             if vm.isLoading {
                 VStack{
                     ActivityIndicatorView()
+                        .padding(.all)
                     Text("Loading..")
                         .foregroundColor(.white)
                         .font(.system(size: 14,weight: .semibold))
@@ -40,22 +40,20 @@ struct PopularPlaceView: View {
                             let listing = place.listing
                             if listing != nil {
                                 VStack(alignment: .center) {
-                                    
                                     WebImage(url: URL(string: (listing!.contextualPictures.first!.picture)))
                                         .resizable()
                                         .indicator(.activity)
-                                        .aspectRatio(1, contentMode: .fit)
+                                       // .aspectRatio(1, contentMode: .fit)
+                                        .frame(width: 200, height: 200)
                                     Text(listing!.name)
                                         .font(.system(size: 12, weight: .semibold))
-                                        .padding()
-                                    
+                                        .padding(.bottom)
                                     Spacer()
-                                    
                                 }
-                                .frame(width: 190,height: 200)
+                                .frame(width: 280,height: 250)
                                 .background(Color(.init(white: 0.9, alpha: 1 )))
-                                .cornerRadius(5)
-                                .shadow(color: .gray, radius: 4, x:4.0, y: 2)
+                                .cornerRadius(10)
+                                .shadow(color: .pink, radius: 4, x:4.0, y: 2)
                                 .padding(.leading)
                             }
                         }.padding(.horizontal)

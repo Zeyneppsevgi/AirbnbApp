@@ -30,11 +30,6 @@ struct CustomTabbar: View {
                     Image(systemName: "car.2")
                     Text("Seyahatler")
                 }
-            Color.green
-                .tabItem {
-                    Image(systemName: "bubble.right")
-                    Text("Gelen kutusu")
-                }
             Color.pink
                 .tabItem {
                     Image(systemName: "person.circle")

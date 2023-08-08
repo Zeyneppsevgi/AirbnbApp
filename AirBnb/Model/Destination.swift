@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Destination: Hashable {
-    let name, country, imageName: String
-}
+//struct Destination: Hashable {
+//    let name, country, imageName: String
+//}

@@ -7,11 +7,6 @@
 //
 import Foundation
 import SwiftUI
-//
-//struct Category: Decodable {
-//    let name: String
-//    let imageName: String
-//}
 
 struct CategoriesResponse:Decodable, Hashable {
     //let status: Bool
@@ -24,7 +19,6 @@ struct DataModel : Decodable, Hashable {
     let title: String
     let image: String
 }
-
 
 struct CategoryResponse: Decodable, Hashable {
     let data : Data
@@ -45,11 +39,6 @@ struct Picture : Decodable, Hashable {
     let picture : String
 }
 
-//    struct Image: Decodable {
-//        let image: String?
-//        //var Image
-//    }
-
 enum NetworkError : Error {
     case invalidURL
     case invalidURLRequest
@@ -66,7 +55,7 @@ class APIService {
     func getCategories(competion: @escaping(CategoriesResponse?) -> ()){
         
         let demoResponse=CategoriesResponse(data:[DataModel(id: "Tag:8678",
-                                                             title: "Rooms", image: "https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"),
+                                                            title: "Rooms", image: "https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"),
                                                   DataModel(id: "Tag:7769",
                                                             title: "Beach", image: "https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg"),
                                                   DataModel(id: "Tag:8661",
@@ -206,20 +195,39 @@ class APIService {
     
     func getCategory(categoryId:String?,competion: @escaping(CategoryResponse?) -> ()){
         print("zeynep",categoryId)
-        
-        let response = CategoryResponse(data:Data(homes: [Home(listing: Listing(name:  "Luxurious Boutique Studio Red Hook Brooklyn", contextualPictures: [Picture(picture: "https://a0.muscache.com/im/pictures/2f6a7d5a-7a23-49bd-a3ec-265edc24ef20.jpg?im_w=720")]))]))
+        let response = CategoryResponse(data: Data(homes: [
+            Home(listing: Listing(name: "Luxurious Boutique Studio Red Hook Brooklyn", contextualPictures: [
+                Picture(picture: "https://a0.muscache.com/im/pictures/2f6a7d5a-7a23-49bd-a3ec-265edc24ef20.jpg?im_w=720")
+            ])),
+            Home(listing: Listing(name: "Beautiful Penthouse Suite with skyline views!", contextualPictures: [
+                Picture(picture: "https://a0.muscache.com/im/pictures/9e086ee8-2ea0-4c35-82f9-dfff4c9aedbe.jpg?im_w=720")
+            ])),
+            Home(listing: Listing(name: "Individual Cubicle Room in NYC/Mixed Floor", contextualPictures: [
+                Picture(picture: "https://a0.muscache.com/im/pictures/miso/Hosting-53751580/original/ce7a5220-6d08-4cd4-b38b-f7ba877b33e9.jpeg?im_w=720")
+            ])),
+            Home(listing: Listing(name: "Skyline views in Lower Manhattan", contextualPictures: [
+                Picture(picture: "https://a0.muscache.com/im/pictures/miso/Hosting-53843545/original/0d909786-f531-48da-8008-b4ae698c5193.jpeg?im_w=720")
+            ])),
+            Home(listing: Listing(name: "Master Bedroom with Private Bathroom", contextualPictures: [
+                Picture(picture: "https://a0.muscache.com/im/pictures/airflow/Hosting-1467214/original/1fddec62-e0cd-4b2f-a568-21e9feca2f2f.jpg?im_w=720")
+            ])),
+            Home(listing: Listing(name: "Sonder Battery Park | Studio Apartment", contextualPictures: [
+                Picture(picture: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-44799007/original/61781941-88e8-49b0-9648-0f94715426f9.jpeg?im_w=720")
+            ])),
+        ]))
+//        let response = CategoryResponse(data:Data(homes: [Home(listing: Listing(name: "Luxurious Boutique Studio Red Hook Brooklyn", contextualPictures: [Picture(picture: "https://a0.muscache.com/im/pictures/2f6a7d5a-7a23-49bd-a3ec-265edc24ef20.jpg?im_w=720")]))]))
         competion(response)
         
-//        let request = NSMutableURLRequest(url: NSURL(string: "https://airbnb-search.p.rapidapi.com/property/search?query=New%20York%2C%20NY")! as URL,
-//                                          cachePolicy: .useProtocolCachePolicy,
-//                                          timeoutInterval: 10.0)
-//        if categoryId != nil{
-//            request.url?.append(queryItems: [URLQueryItem(name: "category", value: categoryId)])
-//        }
-//       
-//        print(request.url)
-//        request.httpMethod = "GET"
-//        request.allHTTPHeaderFields = headers
+        //        let request = NSMutableURLRequest(url: NSURL(string: "https://airbnb-search.p.rapidapi.com/property/search?query=New%20York%2C%20NY")! as URL,
+        //                                          cachePolicy: .useProtocolCachePolicy,
+        //                                          timeoutInterval: 10.0)
+        //        if categoryId != nil{
+        //            request.url?.append(queryItems: [URLQueryItem(name: "category", value: categoryId)])
+        //        }
+        //
+        //        print(request.url)
+        //        request.httpMethod = "GET"
+        //        request.allHTTPHeaderFields = headers
         //
         //        let session = URLSession.shared
         //        session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
