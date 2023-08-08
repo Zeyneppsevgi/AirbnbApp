@@ -1,21 +1,20 @@
 //
-//  CategoryDetailsViewModel.swift
+//  PopularPlacesViewModel.swift
 //  AirBnb
 //
-//  Created by Zeynep Sevgi on 6.08.2023.
+//  Created by Zeynep Sevgi on 7.08.2023.
 //
 
-import SwiftUI
+import Foundation
 
-
-class CategoryDetailsViewModel: ObservableObject {
+class PopularPlacesViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var places = [Home]()
     //network code will happen here
     
-    func getCategory(categoryId:String){
-        print("aaaaaaaaaaaaaaaaaa",categoryId)
-        APIService().getCategory(categoryId: categoryId){(categoryResponse) in
+    func getPopularPlaces(){
+     
+        APIService().getCategory(categoryId: nil){(categoryResponse) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.isLoading = false
                 
@@ -26,5 +25,3 @@ class CategoryDetailsViewModel: ObservableObject {
         }
     }
 }
-
-

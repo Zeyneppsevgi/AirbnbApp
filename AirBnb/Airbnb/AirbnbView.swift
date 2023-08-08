@@ -33,7 +33,7 @@ struct AirbnbView: View {
                         .background(Color(.init(white: 1, alpha: 0.3)))
                         .cornerRadius(15)
                         .padding(8)
-                    AirbnbCategoriesView()
+               AirbnbCategoriesView()
                     VStack {
                         PopularPlaceView()
                         
@@ -44,6 +44,7 @@ struct AirbnbView: View {
                 }
             }
             .navigationTitle("Airbnb")
+          
             
         }
         

@@ -19,8 +19,6 @@ struct CustomTabbar: View {
                     Image(systemName: "magnifyingglass")
                     Text("Keşfedin")
                 }
-            
-            
             Color.orange
                 .tabItem {
                     Image(systemName: "heart")

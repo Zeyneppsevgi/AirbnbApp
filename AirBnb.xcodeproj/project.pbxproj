@@ -22,6 +22,7 @@
 		70DEA64C2A7FDFB300E7261A /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEA64B2A7FDFB300E7261A /* Destination.swift */; };
 		70DEA64F2A80102400E7261A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 70DEA64E2A80102400E7261A /* Kingfisher */; };
 		70DEA6522A80105D00E7261A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 70DEA6512A80105D00E7261A /* SDWebImageSwiftUI */; };
+		70DEA6562A81815F00E7261A /* PopularPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEA6552A81815F00E7261A /* PopularPlacesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		70DEA6462A7FDE3B00E7261A /* CategoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		70DEA6482A7FDE8000E7261A /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		70DEA64B2A7FDFB300E7261A /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		70DEA6552A81815F00E7261A /* PopularPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlacesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		701F382E2A77E7FC007F2527 /* AirBnb */ = {
 			isa = PBXGroup;
 			children = (
+				70DEA6542A81813D00E7261A /* Popular */,
 				70DEA64A2A7FDFA500E7261A /* Model */,
 				70DEA6452A7FDDDB00E7261A /* Category */,
 				70DEA6402A7FDD1C00E7261A /* CategoryDetail */,
@@ -98,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				701F38312A77E7FC007F2527 /* AirbnbView.swift */,
-				70B81AE92A7A52F800907B87 /* PopularPlaceView.swift */,
 				70DEA6432A7FDDB200E7261A /* ActivityIndicatorView.swift */,
 			);
 			path = Airbnb;
@@ -128,6 +130,15 @@
 				70DEA64B2A7FDFB300E7261A /* Destination.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		70DEA6542A81813D00E7261A /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				70B81AE92A7A52F800907B87 /* PopularPlaceView.swift */,
+				70DEA6552A81815F00E7261A /* PopularPlacesViewModel.swift */,
+			);
+			path = Popular;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				70DEA63C2A7CF27800E7261A /* APIService.swift in Sources */,
 				70DEA6472A7FDE3B00E7261A /* CategoryDetailsViewModel.swift in Sources */,
 				70DEA6492A7FDE8000E7261A /* CategoriesViewModel.swift in Sources */,
+				70DEA6562A81815F00E7261A /* PopularPlacesViewModel.swift in Sources */,
 				70DEA64C2A7FDFB300E7261A /* Destination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

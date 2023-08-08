@@ -6,20 +6,18 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CategoryDetailsView: View {
     
     //    let category:String
     let category: DataModel
     
-    @ObservedObject var vm: CategoryDetailsViewModel
+    @ObservedObject var vm: CategoryDetailsViewModel = CategoryDetailsViewModel()
     init(category: DataModel) {
         self.category=category
-        
-        self.vm = CategoryDetailsViewModel()
-        
-        vm.getCategory(categoryId: category.id)
     }
+    
     var body: some View {
         ZStack {
             if vm.isLoading {
@@ -36,21 +34,26 @@ struct CategoryDetailsView: View {
             } else {
                 ScrollView {
                     ForEach(vm.places, id: \.self) { place in
-                        VStack( alignment: .leading, spacing: 0){
-                            //place.listing.contextualPictures.first?.picture
-                            Image("yunanistan")
-                                .resizable()
-                                .scaledToFill()
-                            Text(place.listing.name)
-                                .font(.system(size: 12, weight: .semibold))
-                                .padding()
-                            //.asTile()
-                        }.padding()
+                        let listing = place.listing
+                        if listing != nil {
+                            VStack( alignment: .leading, spacing: 0){
+                                WebImage(url: URL(string: (listing!.contextualPictures.first!.picture)))
+                                    .resizable()
+                                    .indicator(.activity)
+                                    .aspectRatio(1, contentMode: .fit)
+                                Text(listing!.name)
+                                    .font(.system(size: 12, weight: .semibold))
+                                    .padding()
+                            }.padding()
+                        }
                     }
                     
                 }
             }
-        }.navigationBarTitle("Category", displayMode: .inline)
+        }.navigationBarTitle("Category", displayMode: .inline).onAppear{
+            vm.getCategory(categoryId: category.id)
+            
+        }
         
     }
 }
