@@ -44,17 +44,18 @@ struct PopularPlaceView: View {
                                         .resizable()
                                         .indicator(.activity)
                                        // .aspectRatio(1, contentMode: .fit)
-                                        .frame(width: 200, height: 200)
+                                        .frame(width: 300, height: 250)
+                                
                                     Text(listing!.name)
-                                        .font(.system(size: 12, weight: .semibold))
+                                        .font(.system(size: 10, weight: .semibold))
                                         .padding(.bottom)
                                     Spacer()
                                 }
-                                .frame(width: 280,height: 250)
+                                .frame(width: 300,height: 250)
                                 .background(Color(.init(white: 0.9, alpha: 1 )))
-                                .cornerRadius(10)
+                                .cornerRadius(40)
                                 .shadow(color: .pink, radius: 4, x:4.0, y: 2)
-                                .padding(.leading)
+                                .padding(.all)
                             }
                         }.padding(.horizontal)
                     }

@@ -11,7 +11,8 @@ import SwiftUI
 struct AirBnbApp: App {
     var body: some Scene {
         WindowGroup {
-            CustomTabbar()
+            SplashView()
+            //CustomTabbar()
             
         }
     }

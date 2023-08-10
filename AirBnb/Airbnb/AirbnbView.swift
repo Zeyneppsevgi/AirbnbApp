@@ -20,8 +20,8 @@ struct AirbnbView: View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
-                Color(.init(white: 0.95, alpha: 1))
-                    .offset(y:200)
+                //Color(.init(white: 0.95, alpha: 1))
+                    //.offset(y:200)
                 ScrollView {
                     HStack {
                         Image(systemName: "magnifyingglass")
@@ -39,7 +39,7 @@ struct AirbnbView: View {
                         
                     }.background(Color.white)
                         .cornerRadius(20)
-                        .padding(.top, 80)
+                        .padding(.top, 15)
                     
                 }
             }

@@ -9,10 +9,9 @@ import SwiftUI
 import Kingfisher
 import SDWebImageSwiftUI
 
-
 struct AirbnbCategoriesView: View {
     @ObservedObject var vm = CategoriesViewModel()
-    
+
     @State var isPresenting = false
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -23,6 +22,9 @@ struct AirbnbCategoriesView: View {
                     }
                 }
             }.padding(.horizontal)
+                .onAppear{
+                    vm.getCategoriesModel()
+                }
         }
     }
 }
@@ -30,7 +32,6 @@ struct AirbnbCategoriesView: View {
 struct CategoryView:View{
     var category:DataModel
     var body: some View {
-        
         VStack(alignment: .center, spacing: 3) {
             // KFImage(URL(string: category.image))
             WebImage(url: URL(string: category.image))
@@ -51,14 +52,13 @@ struct CategoryView:View{
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
         }.frame(width: 70)
-        
     }
 }
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
         
-        CategoryView(category:DataModel(id: "123", title: "title1", image: "image")).padding(.top)
+        CategoryView(category:DataModel(id: "123", title: "title1", image: "image")).padding(.top )
         
     }
 }

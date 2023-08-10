@@ -15,7 +15,7 @@ class PopularPlacesViewModel: ObservableObject {
     func getPopularPlaces(){
      
         APIService().getCategory(categoryId: nil){(categoryResponse) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.isLoading = false
                 
                 if (categoryResponse != nil && categoryResponse?.data != nil && categoryResponse?.data.homes != nil){

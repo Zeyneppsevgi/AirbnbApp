@@ -41,6 +41,7 @@ struct CategoryDetailsView: View {
                                     .resizable()
                                     .indicator(.activity)
                                     .aspectRatio(1, contentMode: .fit)
+                                    .cornerRadius(30)
                                 Text(listing!.name)
                                     .font(.system(size: 12, weight: .semibold))
                                     .padding()
@@ -50,7 +51,8 @@ struct CategoryDetailsView: View {
                     
                 }
             }
-        }.navigationBarTitle("Category", displayMode: .inline).onAppear{
+        }.navigationBarTitle("Category", displayMode: .inline)
+            .onAppear{
             vm.getCategory(categoryId: category.id)
             
         }
