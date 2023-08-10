@@ -18,6 +18,7 @@
 		706B4F882A8370DF0044BD59 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B4F872A8370DF0044BD59 /* ProfilePageView.swift */; };
 		70B81AE72A7A3B5800907B87 /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B81AE62A7A3B5800907B87 /* CustomTabbar.swift */; };
 		70B81AEA2A7A52F800907B87 /* PopularPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B81AE92A7A52F800907B87 /* PopularPlaceView.swift */; };
+		70BBF03A2A851D340084EBF6 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BBF0392A851D340084EBF6 /* LoginManager.swift */; };
 		70DEA6352A7C21EE00E7261A /* AirbnbCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEA6342A7C21EE00E7261A /* AirbnbCategoriesView.swift */; };
 		70DEA63C2A7CF27800E7261A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEA63B2A7CF27800E7261A /* APIService.swift */; };
 		70DEA6422A7FDD6800E7261A /* CategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DEA6412A7FDD6800E7261A /* CategoryDetailsView.swift */; };
@@ -42,6 +43,7 @@
 		706B4F872A8370DF0044BD59 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		70B81AE62A7A3B5800907B87 /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
 		70B81AE92A7A52F800907B87 /* PopularPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlaceView.swift; sourceTree = "<group>"; };
+		70BBF0392A851D340084EBF6 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		70DEA6342A7C21EE00E7261A /* AirbnbCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbCategoriesView.swift; sourceTree = "<group>"; };
 		70DEA63B2A7CF27800E7261A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		70DEA6412A7FDD6800E7261A /* CategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsView.swift; sourceTree = "<group>"; };
@@ -70,7 +72,6 @@
 		701F38232A77E7FC007F2527 = {
 			isa = PBXGroup;
 			children = (
-				706B4F862A8370C70044BD59 /* ProfilePage */,
 				701F382E2A77E7FC007F2527 /* AirBnb */,
 				701F382D2A77E7FC007F2527 /* Products */,
 			);
@@ -87,6 +88,8 @@
 		701F382E2A77E7FC007F2527 /* AirBnb */ = {
 			isa = PBXGroup;
 			children = (
+				70BBF0362A851B970084EBF6 /* Manager */,
+				706B4F862A8370C70044BD59 /* ProfilePage */,
 				70DEA6542A81813D00E7261A /* Popular */,
 				70DEA64A2A7FDFA500E7261A /* Model */,
 				70DEA6452A7FDDDB00E7261A /* Category */,
@@ -127,6 +130,14 @@
 				70DEA6432A7FDDB200E7261A /* ActivityIndicatorView.swift */,
 			);
 			path = Airbnb;
+			sourceTree = "<group>";
+		};
+		70BBF0362A851B970084EBF6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				70BBF0392A851D340084EBF6 /* LoginManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		70DEA6402A7FDD1C00E7261A /* CategoryDetail */ = {
@@ -251,6 +262,7 @@
 				70B81AE72A7A3B5800907B87 /* CustomTabbar.swift in Sources */,
 				701F38322A77E7FC007F2527 /* AirbnbView.swift in Sources */,
 				70DEA6352A7C21EE00E7261A /* AirbnbCategoriesView.swift in Sources */,
+				70BBF03A2A851D340084EBF6 /* LoginManager.swift in Sources */,
 				701F38302A77E7FC007F2527 /* AirBnbApp.swift in Sources */,
 				70DEA6422A7FDD6800E7261A /* CategoryDetailsView.swift in Sources */,
 				70DEA63C2A7CF27800E7261A /* APIService.swift in Sources */,

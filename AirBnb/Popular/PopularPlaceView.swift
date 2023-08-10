@@ -43,13 +43,26 @@ struct PopularPlaceView: View {
                                     WebImage(url: URL(string: (listing!.contextualPictures.first!.picture)))
                                         .resizable()
                                         .indicator(.activity)
-                                       // .aspectRatio(1, contentMode: .fit)
+                                    // .aspectRatio(1, contentMode: .fit)
                                         .frame(width: 300, height: 250)
-                                
+                                    
                                     Text(listing!.name)
                                         .font(.system(size: 10, weight: .semibold))
                                         .padding(.bottom)
+                                    
+                                    
                                     Spacer()
+                                    Button(action: {
+                                        
+                                    }) {
+                                        Image(systemName: "heart.fill")
+                                            .foregroundColor(.pink)
+                                            .padding(.all, 8)
+                                            .background(Color.white)
+                                            .clipShape(Circle())
+                                    }
+                                    .padding(.horizontal, 99.0)
+                                    .padding([.top, .trailing], -258.0)
                                 }
                                 .frame(width: 300,height: 250)
                                 .background(Color(.init(white: 0.9, alpha: 1 )))

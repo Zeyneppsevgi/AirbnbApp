@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SplashView: View {
-    @State private var isActive: Bool = false
+    @ObservedObject var loginManager = LoginManager()
+    @State private var isSplashFinished: Bool = false
     
     var body: some View {
-        if self.isActive {
+        if self.isSplashFinished && !loginManager.isLogin {
             ProfilePageView()
+        } else if self.isSplashFinished && loginManager.isLogin {
+            CustomTabbar()
         } else {
             Image("airbnb_screen")
                 .resizable()
@@ -26,7 +30,7 @@ struct SplashView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
 
                        withAnimation {
-                           self.isActive = true
+                           self.isSplashFinished = true
                        }
                }
             }

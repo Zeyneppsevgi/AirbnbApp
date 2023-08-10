@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CustomTabbar: View {
-    
     @State private var selection: String = "home"
     
     var body: some View {
@@ -35,7 +35,8 @@ struct CustomTabbar: View {
     }
 struct FirstPage: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+    @ObservedObject var loginManager = LoginManager()
+
     var body: some View {
         
         NavigationView {
@@ -65,12 +66,15 @@ struct FirstPage: View {
                         .foregroundColor(.secondary)
                         .padding(.bottom, 20)
                     
+                    Spacer(minLength: 140)
+                        .padding()
                     Button {
+                        loginManager.isLogin = false
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Çıkış Yap")
                             .padding()
-                            .padding(.horizontal, 20)
+                            .padding(.all)
                             .foregroundColor(.white)
                             .background(Color.pink)
                             .cornerRadius(10)
