@@ -30,6 +30,9 @@ struct ProfilePageView: View {
     @State private var isLoggedSuccessfully = false
     @State private var loginStatusMessage = ""
     @State private var shouldShowImagePicker = false
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
     @ObservedObject var loginManager = LoginManager()
     
         
@@ -96,8 +99,11 @@ struct ProfilePageView: View {
                             Spacer()
                         }.background(Color.pink)
                     }
-                    Text(self.loginStatusMessage)
-                        .foregroundColor(.red)
+                    .alert(isPresented: $showAlert) {
+                          Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                      }
+                   // Text(self.loginStatusMessage)
+                    //    .foregroundColor(.gray)
                     
                     
                 }
@@ -129,11 +135,9 @@ struct ProfilePageView: View {
     
     private func handleAction() {
         if isloginMode {
-            //print("aaaaa")
             loginUser()
         } else {
             CreateNewAccount()
-           //print("bbb")
         }
     }
     
@@ -143,12 +147,15 @@ struct ProfilePageView: View {
             if let err = err {
                 print("Failed to login user:" ,err)
                 self.loginStatusMessage = " Failed to login user: \(err)"
+                self.showAlert = true
+                self.alertMessage = "Failed to login user: \(err)"
                 return
             }
             
             print("Successfully logged in as user: \(result!.user.uid)")
             self.loginManager.isLogin = true
             self.isLoggedSuccessfully = true
+           // self.loginManager.userEmail = self.email
             self.loginStatusMessage = "Successfully logged in as user: \(result?.user.uid ?? "")"
         }
     }
@@ -156,19 +163,29 @@ struct ProfilePageView: View {
     
   
     private func  CreateNewAccount() {
+        
+        guard !email.isEmpty, !password.isEmpty else {
+             showAlert = true
+             alertMessage = "Please enter both email and password."
+             return
+         }
+        
         FirebaseManager.shared.auth.createUser(withEmail: email, password: password) {
             result, err in
             if let err = err {
                 print("Failed to create user:" ,err)
                 self.loginStatusMessage = " Failed to create user: \(err)"
+                self.showAlert = true
+                self.alertMessage = "Failed to create user: \(err)"
                 return
             }
             
-            print("Successfully created user: \(result!.user.uid)")
+          print("Successfully created user: \(result!.user.uid)")
                 
             
             self.loginStatusMessage = "Successfuly created user: \(result?.user.uid ?? "")"
             self.isloginMode = true
+           
           
         }
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct AirBnbApp: App {
+   
     var body: some Scene {
         WindowGroup {
             SplashView()

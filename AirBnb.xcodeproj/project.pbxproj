@@ -88,6 +88,7 @@
 		701F382E2A77E7FC007F2527 /* AirBnb */ = {
 			isa = PBXGroup;
 			children = (
+				70BBF0402A862DE80084EBF6 /* Favorite */,
 				70BBF0362A851B970084EBF6 /* Manager */,
 				706B4F862A8370C70044BD59 /* ProfilePage */,
 				70DEA6542A81813D00E7261A /* Popular */,
@@ -138,6 +139,13 @@
 				70BBF0392A851D340084EBF6 /* LoginManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		70BBF0402A862DE80084EBF6 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		70DEA6402A7FDD1C00E7261A /* CategoryDetail */ = {

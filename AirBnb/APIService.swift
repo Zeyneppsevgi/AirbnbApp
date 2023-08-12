@@ -194,7 +194,7 @@ class APIService {
     
     
     func getCategory(categoryId:String?,competion: @escaping(CategoryResponse?) -> ()){
-        print("zeynep",categoryId)
+      
         let response = CategoryResponse(data: Data(homes: [
             Home(listing: Listing(name: "Luxurious Boutique Studio Red Hook Brooklyn", contextualPictures: [
                 Picture(picture: "https://a0.muscache.com/im/pictures/2f6a7d5a-7a23-49bd-a3ec-265edc24ef20.jpg?im_w=720")

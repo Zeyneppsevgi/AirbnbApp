@@ -14,7 +14,7 @@ class CategoryDetailsViewModel: ObservableObject {
     //network code will happen here
     
     func getCategory(categoryId:String){
-        print("aaaaaaaaaaaaaaaaaa",categoryId)
+        print(categoryId)
         APIService().getCategory(categoryId: categoryId){(categoryResponse) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.isLoading = false
