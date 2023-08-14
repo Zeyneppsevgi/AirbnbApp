@@ -88,7 +88,6 @@
 		701F382E2A77E7FC007F2527 /* AirBnb */ = {
 			isa = PBXGroup;
 			children = (
-				70BBF0402A862DE80084EBF6 /* Favorite */,
 				70BBF0362A851B970084EBF6 /* Manager */,
 				706B4F862A8370C70044BD59 /* ProfilePage */,
 				70DEA6542A81813D00E7261A /* Popular */,
@@ -98,12 +97,12 @@
 				70B81AE82A7A502900907B87 /* Airbnb */,
 				701F382F2A77E7FC007F2527 /* AirBnbApp.swift */,
 				70B81AE62A7A3B5800907B87 /* CustomTabbar.swift */,
+				70DEA63B2A7CF27800E7261A /* APIService.swift */,
+				7059BF662A84CB97001079F7 /* SplashView.swift */,
 				701F38332A77E7FD007F2527 /* Assets.xcassets */,
 				701F38352A77E7FD007F2527 /* Preview Content */,
-				70DEA63B2A7CF27800E7261A /* APIService.swift */,
 				7059BF612A83900C001079F7 /* GoogleService-Info.plist */,
 				7059BF652A84C4D3001079F7 /* Info.plist */,
-				7059BF662A84CB97001079F7 /* SplashView.swift */,
 			);
 			path = AirBnb;
 			sourceTree = "<group>";
@@ -139,13 +138,6 @@
 				70BBF0392A851D340084EBF6 /* LoginManager.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		70BBF0402A862DE80084EBF6 /* Favorite */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Favorite;
 			sourceTree = "<group>";
 		};
 		70DEA6402A7FDD1C00E7261A /* CategoryDetail */ = {

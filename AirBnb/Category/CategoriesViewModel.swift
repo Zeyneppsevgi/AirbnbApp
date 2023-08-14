@@ -12,19 +12,19 @@ class CategoriesViewModel: ObservableObject {
     @Published var categories = [DataModel]()
     
     
-    func getCategoriesModel() {
-       
-            APIService().getCategories(){(categoryResponse) in
-                if (categoryResponse != nil && categoryResponse?.data != nil){
-                    self.categories=(categoryResponse?.data)!
-                    self.isLoading = false
+        func getCategoriesModel() {
+    
+                APIService().getCategories(){(categoryResponse) in
+                    if (categoryResponse != nil && categoryResponse?.data != nil){
+                        self.categories=(categoryResponse?.data)!
+                        self.isLoading = false
+                    }
                 }
             }
         }
-    }
     
-
-//network code will happen here
+    
+//    //network code will happen here
 //    init() {
 //        APIService().getCategories(){(categoryResponse) in
 //            if (categoryResponse != nil && categoryResponse?.data != nil){
@@ -35,5 +35,7 @@ class CategoriesViewModel: ObservableObject {
 //        }
 //
 //    }
+//
+//}
 
 

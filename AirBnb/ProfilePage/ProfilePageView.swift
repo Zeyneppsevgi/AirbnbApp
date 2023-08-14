@@ -146,9 +146,9 @@ struct ProfilePageView: View {
             result, err in
             if let err = err {
                 print("Failed to login user:" ,err)
-                self.loginStatusMessage = " Failed to login user: \(err)"
+                self.loginStatusMessage = " Failed to login user: Your login information is incorrect or incomplete"
                 self.showAlert = true
-                self.alertMessage = "Failed to login user: \(err)"
+                self.alertMessage = "Failed to login user: Your login information is incorrect or incomplete"
                 return
             }
             
@@ -185,6 +185,7 @@ struct ProfilePageView: View {
             
             self.loginStatusMessage = "Successfuly created user: \(result?.user.uid ?? "")"
             self.isloginMode = true
+            
            
           
         }

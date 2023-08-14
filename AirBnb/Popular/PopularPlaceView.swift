@@ -9,7 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct PopularPlaceView: View {
-  //  @Environment(\.managedObjectContext) var moc
+ 
     
     @ObservedObject var vm: PopularPlacesViewModel = PopularPlacesViewModel()
     @State private var categoryResponse:CategoryResponse?=nil
@@ -57,9 +57,6 @@ struct PopularPlaceView: View {
                                     Spacer()
                                     if let listing = listing, let index = vm.places.firstIndex(of: place) {
                                         Button(action: {
-//                                            let saveElement = Favorite(context: moc)
-//                                            saveElement.name = place.listing?.name
-//                                            try? moc.save()
                                             isFavorite[index].toggle()
                                             
                                         }) {
