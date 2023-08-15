@@ -166,9 +166,9 @@ class APIService {
                                                                      image: "https://a0.muscache.com/pictures/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg"
                                                                    ),
                 ])
-        
+
                 competion(demoResponse)
-        
+//
 //        let request = NSMutableURLRequest(url: NSURL(string: "https://airbnb-search.p.rapidapi.com/categories?query=New%20York%2C%20NY&language_code=en-US")! as URL,
 //                                          cachePolicy: .useProtocolCachePolicy,
 //                                          timeoutInterval: 10.0)

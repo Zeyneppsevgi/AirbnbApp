@@ -11,10 +11,10 @@ import SwiftUI
 class CategoryDetailsViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var places = [Home]()
-    //network code will happen here
+    
     
     func getCategory(categoryId:String){
-        print(categoryId)
+       // print(categoryId)
         APIService().getCategory(categoryId: categoryId){(categoryResponse) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.isLoading = false

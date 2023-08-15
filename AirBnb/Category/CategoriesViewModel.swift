@@ -23,19 +23,5 @@ class CategoriesViewModel: ObservableObject {
             }
         }
     
-    
-//    //network code will happen here
-//    init() {
-//        APIService().getCategories(){(categoryResponse) in
-//            if (categoryResponse != nil && categoryResponse?.data != nil){
-//                self.categories=(categoryResponse?.data)!
-//                self.isLoading = false
-//            }
-//
-//        }
-//
-//    }
-//
-//}
 
 
